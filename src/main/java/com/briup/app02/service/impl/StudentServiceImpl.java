@@ -39,7 +39,6 @@ public class StudentServiceImpl implements IStudentService {
 	public void deleteById(long id) throws Exception {
 		
 		studentMapper.deleteById(id);
-		
 	}
 	
 	@Override

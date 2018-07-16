@@ -66,8 +66,8 @@ public class StudentController {
 		}
 	}
 	
-	@PostMapping("saveStudentById")
-	public MsgResponse saveStudentById(Student student) {
+	@PostMapping("saveStudent")
+	public MsgResponse saveStudent(Student student) {
 		
 		try {
 			studentService.save(student);

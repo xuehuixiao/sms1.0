@@ -66,8 +66,8 @@ public class GradeController {
 		}
 	}
 	
-	@PostMapping("saveGradeById")
-	public MsgResponse saveGradeById(Grade grade) {
+	@PostMapping("saveGrade")
+	public MsgResponse saveGrade(Grade grade) {
 		
 		try {
 			gradeService.save(grade);

@@ -66,8 +66,8 @@ public class ShoolController {
 		}
 	}
 	
-	@PostMapping("saveShoolById")
-	public MsgResponse saveShoolById(Shool shool) {
+	@PostMapping("saveShool")
+	public MsgResponse saveShool(Shool shool) {
 		
 		try {
 			shoolService.save(shool);

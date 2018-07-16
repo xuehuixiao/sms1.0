@@ -66,8 +66,8 @@ public class SurveyController {
 		}
 	}
 	
-	@PostMapping("saveSurveyById")
-	public MsgResponse saveSurveyById(Survey survey) {
+	@PostMapping("saveSurvey")
+	public MsgResponse saveSurvey(Survey survey) {
 		
 		try {
 			surveyService.save(survey);

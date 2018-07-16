@@ -66,8 +66,8 @@ public class QqController {
 		}
 	}
 	
-	@PostMapping("saveQqById")
-	public MsgResponse saveQqById(Qq qq) {
+	@PostMapping("saveQq")
+	public MsgResponse saveQq(Qq qq) {
 		
 		try {
 			qqService.save(qq);

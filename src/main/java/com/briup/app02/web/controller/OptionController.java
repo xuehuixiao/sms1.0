@@ -66,8 +66,8 @@ public class OptionController {
 		}
 	}
 	
-	@PostMapping("saveOptionById")
-	public MsgResponse saveOptionById(Option option) {
+	@PostMapping("saveOption")
+	public MsgResponse saveOption(Option option) {
 		
 		try {
 			optionService.save(option);

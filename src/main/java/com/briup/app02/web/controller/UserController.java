@@ -66,8 +66,8 @@ public class UserController {
 		}
 	}
 	
-	@PostMapping("saveUserById")
-	public MsgResponse saveUserById(User user) {
+	@PostMapping("saveUser")
+	public MsgResponse saveUser(User user) {
 		
 		try {
 			userService.save(user);

@@ -66,8 +66,8 @@ public class QuestionnaireController {
 		}
 	}
 	
-	@PostMapping("saveQuestionnaireById")
-	public MsgResponse saveQuestionnaireById(Questionnaire questionnaire) {
+	@PostMapping("saveQuestionnaire")
+	public MsgResponse saveQuestionnaire(Questionnaire questionnaire) {
 		
 		try {
 			questionnaireService.save(questionnaire);

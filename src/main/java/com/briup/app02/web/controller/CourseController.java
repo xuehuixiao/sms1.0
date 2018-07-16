@@ -66,8 +66,8 @@ public class CourseController {
 		}
 	}
 	
-	@PostMapping("saveCourseById")
-	public MsgResponse saveCourseById(Course course) {
+	@PostMapping("saveCourse")
+	public MsgResponse saveCourse(Course course) {
 		
 		try {
 			courseService.save(course);

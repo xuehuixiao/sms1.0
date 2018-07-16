@@ -66,8 +66,8 @@ public class AnswerController {
 		}
 	}
 	
-	@PostMapping("saveAnswerById")
-	public MsgResponse saveAnswerById(Answer answer) {
+	@PostMapping("saveAnswer")
+	public MsgResponse saveAnswer(Answer answer) {
 		
 		try {
 			answerService.save(answer);

@@ -66,8 +66,8 @@ public class ClazzController {
 		}
 	}
 	
-	@PostMapping("saveClazzById")
-	public MsgResponse saveClazzById(Clazz clazz) {
+	@PostMapping("saveClazz")
+	public MsgResponse saveClazz(Clazz clazz) {
 		
 		try {
 			clazzService.save(clazz);

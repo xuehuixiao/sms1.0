@@ -3,7 +3,7 @@ package com.briup.app02.bean;
 public class Shool {
 	private long id;
 	private String name;
-	private String decription;
+	private String description;
 	private String address;
 	private String telephone;
 	private String copyright;
@@ -20,11 +20,11 @@ public class Shool {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public String getDecription() {
-		return decription;
+	public String getDescription() {
+		return description;
 	}
-	public void setDecription(String decription) {
-		this.decription = decription;
+	public void setDescription(String description) {
+		this.description = description;
 	}
 	public String getAddress() {
 		return address;

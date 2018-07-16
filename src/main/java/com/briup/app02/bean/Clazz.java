@@ -3,7 +3,7 @@ package com.briup.app02.bean;
 public class Clazz {
 	private long id;
 	private String name;
-	private String decription;
+	private String description;
 	private long grade_id;
 	private long user_id;
 	
@@ -19,11 +19,11 @@ public class Clazz {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public String getDecription() {
-		return decription;
+	public String getDescription() {
+		return description;
 	}
-	public void setDecription(String decription) {
-		this.decription = decription;
+	public void setDescription(String description) {
+		this.description = description;
 	}
 	public long getGrade_id() {
 		return grade_id;

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.briup.app02.dao.ShoolMapper">
+  <select id="findAll" resultType="com.briup.app02.bean.Shool">
+    select * from poll_shool
+  </select>
+  <select id="findById" parameterType="long" resultType="com.briup.app02.bean.Shool">
+    select * from poll_shool where id=#{id}
+  </select>
+  <update id="updateById" parameterType="com.briup.app02.bean.Shool">
+    update poll_shool 
+    set name=#{name},description=#{description},address=#{address},telephone=#{telephone},copyright=#{copyright} 
+    where id=#{id}
+  </update>
+  <delete id="deleteById" parameterType="long" >
+    delete from poll_shool where id=#{id}
+  </delete>
+  <insert id="save" parameterType="com.briup.app02.bean.Shool">
+  insert poll_shool values (null,#{name},#{description},#{address},#{telephone},#{copyright})
+  </insert>
+</mapper>

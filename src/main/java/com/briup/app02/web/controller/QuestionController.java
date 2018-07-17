@@ -10,12 +10,15 @@ import com.briup.app02.bean.Question;
 import com.briup.app02.service.IQuestionService;
 import com.briup.app02.util.MsgResponse;
 
+import io.swagger.annotations.ApiOperation;
+
 @RestController
 @RequestMapping("/Question")
 public class QuestionController {
 	@Autowired
 	private IQuestionService questionService;
 	
+	@ApiOperation(value="查询所有问题",notes="级联查询问题选项")
 	@GetMapping("findAllQuestion")
 	public MsgResponse findAllQuestion() {
 		

@@ -7,26 +7,30 @@ import org.springframework.stereotype.Service;
 
 import com.briup.app02.bean.Question;
 import com.briup.app02.dao.QuestionMapper;
+import com.briup.app02.dao.extend.QuestionVMMapper;
 import com.briup.app02.service.IQuestionService;
+import com.briup.app02.vm.QuestionVM;
 
 @Service
 public class QuestionServiceImpl implements IQuestionService {
 	
 	@Autowired
 	private QuestionMapper questionMapper;
+	@Autowired
+	private QuestionVMMapper questionVMMapper;
 	
 	@Override
-	public List<Question> findAll() throws Exception {
+	public List<QuestionVM> findAll() throws Exception {
 		
-		List<Question> list=questionMapper.findAll();
+		List<QuestionVM> list=questionVMMapper.findAllQuestionVM();
 		
 		return list;
 	}
 	
 	@Override
-	public Question findById(long id) throws Exception {
+	public QuestionVM findById(long id) throws Exception {
 		
-		 return questionMapper.findById(id);
+		 return questionVMMapper.findQuestionVMById(id);
 	}
 	
 	@Override

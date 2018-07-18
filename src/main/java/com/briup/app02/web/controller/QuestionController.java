@@ -18,7 +18,7 @@ public class QuestionController {
 	@Autowired
 	private IQuestionService questionService;
 	
-	@ApiOperation(value="查询所有问题",notes="级联查询问题选项")
+	@ApiOperation(value="查询所有问题",notes="不级联查询问题选项")
 	@GetMapping("findAllQuestion")
 	public MsgResponse findAllQuestion() {
 		
@@ -31,8 +31,35 @@ public class QuestionController {
 		}
 	}
 	
+	@ApiOperation(value="查询所有问题",notes="级联查询问题选项")
+	@GetMapping("findAllQuestionVM")
+	public MsgResponse findAllQuestionVM() {
+		
+		try {
+			return MsgResponse.success("查找成功",questionService.findAllQuestionVM());
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return MsgResponse.error(e.getMessage());
+		}
+	}
+	
+	@ApiOperation(value="通过id查询问题",notes="不级联查询问题选项")
 	@GetMapping("findQuestionById")
 	public MsgResponse findQuestionById(long id) {
+		
+		try {
+			return MsgResponse.success("查找成功",questionService.findQuestionVMById(id));
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return MsgResponse.error(e.getMessage());
+		}
+	}
+	
+	@ApiOperation(value="通过id查询问题",notes="级联查询问题选项")
+	@GetMapping("findQuestionVMById")
+	public MsgResponse findQuestionVMById(long id) {
 		
 		try {
 			return MsgResponse.success("查找成功",questionService.findById(id));

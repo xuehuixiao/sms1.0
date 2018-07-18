@@ -1,6 +1,5 @@
 package com.briup.app02.vm;
 
-import com.briup.app02.bean.Clazz;
 import com.briup.app02.bean.Course;
 import com.briup.app02.bean.Questionnaire;
 import com.briup.app02.bean.User;
@@ -12,7 +11,7 @@ public class SurveyVM {
 	private String surveydate;
 	private Questionnaire questionnaire;
 	private User user;
-	private Clazz clazz;
+	private ClazzVM clazzVM;
 	private Course course;
 	
 	public long getId() {
@@ -51,11 +50,11 @@ public class SurveyVM {
 	public void setUser(User user) {
 		this.user = user;
 	}
-	public Clazz getClazz() {
-		return clazz;
+	public ClazzVM getClazzVM() {
+		return clazzVM;
 	}
-	public void setClazz(Clazz clazz) {
-		this.clazz = clazz;
+	public void setClazzVM(ClazzVM clazzVM) {
+		this.clazzVM = clazzVM;
 	}
 	public Course getCourse() {
 		return course;

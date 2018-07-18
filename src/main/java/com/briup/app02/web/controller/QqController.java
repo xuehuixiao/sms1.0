@@ -10,6 +10,10 @@ import com.briup.app02.bean.Qq;
 import com.briup.app02.service.IQqService;
 import com.briup.app02.util.MsgResponse;
 
+import springfox.documentation.annotations.ApiIgnore;
+
+@ApiIgnore
+
 @RestController
 @RequestMapping("/Qq")
 public class QqController {
@@ -21,6 +25,17 @@ public class QqController {
 		
 		try {
 			return MsgResponse.success("查找成功",qqService.findAll());
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return MsgResponse.error(e.getMessage());
+		}
+	}
+	@GetMapping("findAllQqVM")
+	public MsgResponse findAllQqVM() {
+		
+		try {
+			return MsgResponse.success("查找成功",qqService.findAllQqVM());
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -39,12 +54,23 @@ public class QqController {
 			return MsgResponse.error(e.getMessage());
 		}
 	}
+	@GetMapping("findQqVMById")
+	public MsgResponse findQqVMById(long id) {
+		
+		try {
+			return MsgResponse.success("查找成功",qqService.findQqVMById(id));
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return MsgResponse.error(e.getMessage());
+		}
+	}
 	
 	@PostMapping("updateQqById")
-	public MsgResponse updateQqById(Qq qq) {
+	public MsgResponse updateQqById(Qq Qq) {
 			
 		try {
-			qqService.updateById(qq);
+			qqService.updateById(Qq);
 			return MsgResponse.success("更新成功",null);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
@@ -67,10 +93,10 @@ public class QqController {
 	}
 	
 	@PostMapping("saveQq")
-	public MsgResponse saveQq(Qq qq) {
+	public MsgResponse saveQq(Qq Qq) {
 		
 		try {
-			qqService.save(qq);
+			qqService.save(Qq);
 			return MsgResponse.success("保存成功",null);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block

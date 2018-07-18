@@ -20,7 +20,15 @@ public class QuestionServiceImpl implements IQuestionService {
 	private QuestionVMMapper questionVMMapper;
 	
 	@Override
-	public List<QuestionVM> findAll() throws Exception {
+	public List<Question> findAll() throws Exception {
+		
+		List<Question> list=questionMapper.findAll();
+		
+		return list;
+	}
+	
+	@Override
+	public List<QuestionVM> findAllQuestionVM() throws Exception {
 		
 		List<QuestionVM> list=questionVMMapper.findAllQuestionVM();
 		
@@ -28,7 +36,13 @@ public class QuestionServiceImpl implements IQuestionService {
 	}
 	
 	@Override
-	public QuestionVM findById(long id) throws Exception {
+	public Question findById(long id) throws Exception {
+		
+		 return questionMapper.findById(id);
+	}
+	
+	@Override
+	public QuestionVM findQuestionVMById(long id) throws Exception {
 		
 		 return questionVMMapper.findQuestionVMById(id);
 	}

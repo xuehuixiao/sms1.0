@@ -1,5 +1,10 @@
 package com.briup.app02.dao.extend;
 
-public interface SurveyVMMapper {
+import java.util.List;
 
+import com.briup.app02.vm.SurveyVM;
+
+public interface SurveyVMMapper {
+	List<SurveyVM> findAllSurveyVM();
+	SurveyVM findSurveyVMById(long id);
 }

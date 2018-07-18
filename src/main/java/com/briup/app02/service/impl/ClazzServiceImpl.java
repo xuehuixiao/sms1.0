@@ -20,7 +20,15 @@ public class ClazzServiceImpl implements IClazzService {
 	private ClazzVMMapper clazzVMMapper;
 	
 	@Override
-	public List<ClazzVM> findAll() throws Exception {
+	public List<Clazz> findAll() throws Exception {
+		
+		List<Clazz> list=clazzMapper.findAll();
+		
+		return list;
+	}
+	
+	@Override
+	public List<ClazzVM> findAllClazzVM() throws Exception {
 		
 		List<ClazzVM> list=clazzVMMapper.findAllClazzVM();
 		
@@ -28,7 +36,13 @@ public class ClazzServiceImpl implements IClazzService {
 	}
 	
 	@Override
-	public ClazzVM findById(long id) throws Exception {
+	public Clazz findById(long id) throws Exception {
+		
+		 return clazzMapper.findById(id);
+	}
+	
+	@Override
+	public ClazzVM findClazzVMById(long id) throws Exception {
 		
 		 return clazzVMMapper.findClazzVMById(id);
 	}

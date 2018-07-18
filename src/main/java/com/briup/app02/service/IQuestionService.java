@@ -6,9 +6,11 @@ import com.briup.app02.bean.Question;
 import com.briup.app02.vm.QuestionVM;
 
 public interface IQuestionService {
-	List<QuestionVM> findAll() throws Exception;
+	List<Question> findAll() throws Exception;
+	List<QuestionVM> findAllQuestionVM() throws Exception;
 	
-	QuestionVM findById(long id) throws Exception;
+	Question findById(long id) throws Exception;
+	QuestionVM findQuestionVMById(long id) throws Exception;
 	
 	void updateById(Question question) throws Exception;
 	

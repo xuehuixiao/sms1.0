@@ -6,9 +6,11 @@ import com.briup.app02.bean.Clazz;
 import com.briup.app02.vm.ClazzVM;
 
 public interface IClazzService {
-	List<ClazzVM> findAll() throws Exception;
+	List<Clazz> findAll() throws Exception;
+	List<ClazzVM> findAllClazzVM() throws Exception;
 	
-	ClazzVM findById(long id) throws Exception;
+	Clazz findById(long id) throws Exception;
+	ClazzVM findClazzVMById(long id) throws Exception;
 	
 	void updateById(Clazz clazz) throws Exception;
 	

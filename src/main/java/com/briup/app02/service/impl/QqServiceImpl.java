@@ -7,13 +7,17 @@ import org.springframework.stereotype.Service;
 
 import com.briup.app02.bean.Qq;
 import com.briup.app02.dao.QqMapper;
+import com.briup.app02.dao.extend.QqVMMapper;
 import com.briup.app02.service.IQqService;
+import com.briup.app02.vm.QqVM;
 
 @Service
 public class QqServiceImpl implements IQqService {
 	
 	@Autowired
 	private QqMapper qqMapper;
+	@Autowired
+	private QqVMMapper qqVMMapper;
 	
 	@Override
 	public List<Qq> findAll() throws Exception {
@@ -22,11 +26,23 @@ public class QqServiceImpl implements IQqService {
 		
 		return list;
 	}
+	@Override
+	public List<QqVM> findAllQqVM() throws Exception {
+		
+		List<QqVM> list=qqVMMapper.findAllQqVM();
+		
+		return list;
+	}
 	
 	@Override
 	public Qq findById(long id) throws Exception {
 		
 		 return qqMapper.findById(id);
+	}
+	@Override
+	public QqVM findQqVMById(long id) throws Exception {
+		
+		 return qqVMMapper.findQqVMById(id);
 	}
 	
 	@Override

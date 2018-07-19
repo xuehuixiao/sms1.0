@@ -10,7 +10,7 @@
 	<id column="id" property="id"/>
   	<result column="name" property="name"/>
   	<result column="questiontype" property="questiontype"/> 
-  	<collection property="option" column="id" select="com.briup.app02.dao.OptionMapper.findById"></collection> 	
+  	<collection column="id" property="option" select="com.briup.app02.dao.OptionMapper.findById"></collection> 	
   </resultMap>
   
   <select id="findQuestionVMById"  resultMap="QuestionVMResultMap2">
@@ -20,6 +20,6 @@
 	<id column="id" property="id"/>
   	<result column="name" property="name"/>
   	<result column="questiontype" property="questiontype"/> 
-  	<collection property="option" column="id" select="com.briup.app02.dao.OptionMapper.findById"></collection>
+  	<collection column="id" property="option" select="com.briup.app02.dao.OptionMapper.findById"></collection>
   </resultMap>
 </mapper>

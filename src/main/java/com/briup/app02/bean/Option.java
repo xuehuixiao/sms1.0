@@ -2,7 +2,7 @@ package com.briup.app02.bean;
 
 public class Option {
 	private long id;
-	private String lable;
+	private String label;
 	private String content;
 	private Integer score;
 	private long question_id;
@@ -13,11 +13,11 @@ public class Option {
 	public void setId(long id) {
 		this.id = id;
 	}
-	public String getLable() {
-		return lable;
+	public String getLabel() {
+		return label;
 	}
-	public void setIable(String lable) {
-		this.lable = lable;
+	public void setLabel(String label) {
+		this.label = label;
 	}
 	public String getContent() {
 		return content;

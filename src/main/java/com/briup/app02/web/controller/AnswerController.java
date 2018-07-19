@@ -27,12 +27,34 @@ public class AnswerController {
 			return MsgResponse.error(e.getMessage());
 		}
 	}
+	@GetMapping("findAllAnswerVM")
+	public MsgResponse findAllAnswerVM() {
+		
+		try {
+			return MsgResponse.success("查找成功",answerService.findAllAnswerVM());
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return MsgResponse.error(e.getMessage());
+		}
+	}
 	
 	@GetMapping("findAnswerById")
 	public MsgResponse findAnswerById(long id) {
 		
 		try {
 			return MsgResponse.success("查找成功",answerService.findById(id));
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return MsgResponse.error(e.getMessage());
+		}
+	}
+	@GetMapping("findAnswerVMById")
+	public MsgResponse findAnswerVMById(long id) {
+		
+		try {
+			return MsgResponse.success("查找成功",answerService.findAnswerVMById(id));
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

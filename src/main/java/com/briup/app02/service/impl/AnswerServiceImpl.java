@@ -7,13 +7,17 @@ import org.springframework.stereotype.Service;
 
 import com.briup.app02.bean.Answer;
 import com.briup.app02.dao.AnswerMapper;
+import com.briup.app02.dao.extend.AnswerVMMapper;
 import com.briup.app02.service.IAnswerService;
+import com.briup.app02.vm.AnswerVM;
 
 @Service
 public class AnswerServiceImpl implements IAnswerService {
 	
 	@Autowired
 	private AnswerMapper answerMapper;
+	@Autowired
+	private AnswerVMMapper answerVMMapper;
 	
 	@Override
 	public List<Answer> findAll() throws Exception {
@@ -22,11 +26,23 @@ public class AnswerServiceImpl implements IAnswerService {
 		
 		return list;
 	}
+	@Override
+	public List<AnswerVM> findAllAnswerVM() throws Exception {
+		
+		List<AnswerVM> list=answerVMMapper.findAllAnswerVM();
+		
+		return list;
+	}
 	
 	@Override
 	public Answer findById(long id) throws Exception {
 		
 		 return answerMapper.findById(id);
+	}
+	@Override
+	public AnswerVM findAnswerVMById(long id) throws Exception {
+		
+		 return answerVMMapper.findAnswerVMById(id);
 	}
 	
 	@Override

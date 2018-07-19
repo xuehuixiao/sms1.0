@@ -5,7 +5,9 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.briup.app02.bean.Option;
 import com.briup.app02.bean.Question;
+import com.briup.app02.dao.OptionMapper;
 import com.briup.app02.dao.QuestionMapper;
 import com.briup.app02.dao.extend.QuestionVMMapper;
 import com.briup.app02.service.IQuestionService;
@@ -18,6 +20,8 @@ public class QuestionServiceImpl implements IQuestionService {
 	private QuestionMapper questionMapper;
 	@Autowired
 	private QuestionVMMapper questionVMMapper;
+	@Autowired
+	private OptionMapper optionMapper;
 	
 	@Override
 	public List<Question> findAll() throws Exception {
@@ -64,4 +68,29 @@ public class QuestionServiceImpl implements IQuestionService {
 		
 		questionMapper.save(question);
 	}
+	@Override
+	public void saveQuestionVM(QuestionVM questionVM) throws Exception {
+		
+		Question q=new Question();
+		q.setName(questionVM.getName());
+		q.setQuestiontype(questionVM.getQuestiontype());
+		
+		questionMapper.save(q);
+		
+		Long q_id=q.getId();
+		List<Option> options = questionVM.getOption();
+		for(Option option : options){
+			option.setQuestion_id(q_id);
+			optionMapper.save(option);
+		}	
+	}
 }
+
+
+
+
+
+
+
+
+

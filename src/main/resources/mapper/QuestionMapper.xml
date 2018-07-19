@@ -17,7 +17,7 @@
   <delete id="deleteById" parameterType="long" >
     delete from poll_question where id=#{id}
   </delete>
-  <insert id="save" parameterType="com.briup.app02.bean.Question">
-  insert poll_question values (null,name=#{name},#{questiontype} )
+  <insert id="save" parameterType="com.briup.app02.bean.Question" useGeneratedKeys="true" keyProperty="id">
+  insert poll_question values (null,#{name},#{questiontype} )
   </insert>
 </mapper>

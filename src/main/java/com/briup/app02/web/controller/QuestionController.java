@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.briup.app02.bean.Question;
 import com.briup.app02.service.IQuestionService;
 import com.briup.app02.util.MsgResponse;
+import com.briup.app02.vm.QuestionVM;
 
 import io.swagger.annotations.ApiOperation;
 
@@ -49,7 +50,7 @@ public class QuestionController {
 	public MsgResponse findQuestionById(long id) {
 		
 		try {
-			return MsgResponse.success("查找成功",questionService.findQuestionVMById(id));
+			return MsgResponse.success("查找成功",questionService.findById(id));
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -62,7 +63,7 @@ public class QuestionController {
 	public MsgResponse findQuestionVMById(long id) {
 		
 		try {
-			return MsgResponse.success("查找成功",questionService.findById(id));
+			return MsgResponse.success("查找成功",questionService.findQuestionVMById(id));
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -101,6 +102,18 @@ public class QuestionController {
 		
 		try {
 			questionService.save(question);
+			return MsgResponse.success("保存成功",null);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return MsgResponse.error(e.getMessage());
+		}
+	}
+	@PostMapping("saveQuestionVM")
+	public MsgResponse saveQuestionVM(QuestionVM questionVM) {
+		
+		try {
+			questionService.saveQuestionVM(questionVM);
 			return MsgResponse.success("保存成功",null);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
